@@ -6,61 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="308dp"
-        android:layout_height="45dp"
-        android:orientation="horizontal"
-        app:barrierAllowsGoneWidgets="false"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="223dp"
-            android:layout_height="44dp"
-            android:text="Parking Spots: " />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="349dp"
-        android:layout_height="80dp"
-        android:layout_marginBottom="68dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/theRefreshButton"
-            android:layout_width="wrap_content"
-            android:layout_height="67dp"
-            android:layout_marginBottom="108dp"
-            android:text="Refresh" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-    </LinearLayout>
-
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="414dp"
@@ -233,17 +178,42 @@
 
     </FrameLayout>
 
-    <!--    <ImageView-->
-    <!--        android:id="@+id/eastParkade"-->
-    <!--        android:layout_width="74dp"-->
-    <!--        android:layout_height="54dp"-->
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="332dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
 
-    <!--        app:layout_constraintBottom_toBottomOf="@+id/mruTemplate"-->
-    <!--        app:layout_constraintEnd_toEndOf="@+id/mruTemplate"-->
-    <!--        app:layout_constraintHorizontal_bias="0.549"-->
-    <!--        app:layout_constraintStart_toStartOf="@+id/mruTemplate"-->
-    <!--        app:layout_constraintTop_toTopOf="@+id/mruTemplate"-->
-    <!--        app:layout_constraintVertical_bias="0.593"-->
-    <!--        android:src="@drawable/eastgateparkade_green" />-->
+        <ListView
+            android:id="@+id/parkingListView"
+            android:layout_width="match_parent"
+            android:layout_height="197dp" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/theRefreshButton"
+                android:layout_width="398dp"
+                android:layout_height="67dp"
+                android:layout_marginBottom="108dp"
+                android:text="Refresh" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

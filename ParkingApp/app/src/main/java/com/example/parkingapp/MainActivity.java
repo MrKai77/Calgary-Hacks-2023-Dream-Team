@@ -1,18 +1,14 @@
 package com.example.parkingapp;
 
-import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
-
-import androidx.core.content.ContextCompat;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.Random;
@@ -32,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button btn = findViewById(R.id.theRefreshButton);
-        displayParkingSpot = (TextView) findViewById(R.id.textView);
         ImageView imageViewEastGate = findViewById(R.id.eastGateParkade);
         ImageView imageViewEastGateRed = findViewById(R.id.eastGateParkade_RED);
         ImageView imageViewLotA = findViewById(R.id.parkingLotA);
@@ -59,10 +54,39 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageViewLot8Red = findViewById(R.id.parkingLot8_RED);
         ImageView imageViewLot9 = findViewById(R.id.parkingLot9);
         ImageView imageViewLot9Red = findViewById(R.id.parkingLot9_RED);
-        Drawable drawable = ContextCompat.getDrawable(MainActivity.this, R.drawable.eastgateparkade_green);
-        Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
 
+        ListView parkingLotList = (ListView)findViewById(R.id.parkingListView);
+        String lotList[] = {
+                "East Gate Parkade",
+                "Lot A",
+                "Lot B",
+                "Lot 1",
+                "Lot 2",
+                "Lot 3",
+                "Lot 4",
+                "Lot 5",
+                "Lot 6",
+                "Lot 6A",
+                "Lot 7",
+                "Lot 8",
+                "Lot 9"
+        };
 
+        final ArrayAdapter adapter = new ArrayAdapter(this,
+                R.layout.list_item, R.id.textView, lotList);
+
+        parkingLotList.setAdapter(adapter);
+
+        parkingLotList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
+                /* appending Happy with festival name */
+                String value = "" + adapter.getItem(position);
+                /* Display the Toast */
+                Toast.makeText(getApplicationContext(), value, Toast.LENGTH_SHORT).show();
+            }
+        });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
