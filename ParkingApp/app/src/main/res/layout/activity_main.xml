@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/parkingLot6A"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -242,6 +241,6 @@
     <!--        app:layout_constraintStart_toStartOf="@+id/mruTemplate"-->
     <!--        app:layout_constraintTop_toTopOf="@+id/mruTemplate"-->
     <!--        app:layout_constraintVertical_bias="0.593"-->
-    <!--        app:srcCompat="@drawable/eastgateparkade_green" />-->
+    <!--        android:src="@drawable/eastgateparkade_green" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
