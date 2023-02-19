@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parkingLot6A"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -58,64 +59,189 @@
             android:layout_weight="1" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/mruTemplate"
-        android:layout_width="416dp"
-        android:layout_height="347dp"
-        app:srcCompat="@drawable/campus_parking_map"
-        tools:layout_editor_absoluteY="64dp" />
-
-    <ImageView
-        android:id="@+id/eastGateParkade"
-        android:layout_width="344dp"
-        android:layout_height="529dp"
-        app:layout_constraintBottom_toBottomOf="@+id/mruTemplate"
-        app:layout_constraintEnd_toEndOf="@+id/mruTemplate"
-        app:layout_constraintStart_toStartOf="@+id/mruTemplate"
-        app:layout_constraintTop_toTopOf="@+id/mruTemplate"
-        app:srcCompat="@drawable/eastgateparkade_green" />
-
-    <ImageView
-        android:id="@+id/parkingLotB"
-        android:layout_width="413dp"
-        android:layout_height="586dp"
-        app:layout_constraintBottom_toBottomOf="@+id/mruTemplate"
-        app:layout_constraintEnd_toEndOf="@+id/mruTemplate"
-        app:layout_constraintStart_toStartOf="@+id/mruTemplate"
-        app:layout_constraintTop_toTopOf="@+id/mruTemplate"
-        app:srcCompat="@drawable/lotb_green" />
-
-    <ImageView
-        android:id="@+id/parkingLot4"
-        android:layout_width="411dp"
-        android:layout_height="555dp"
-        app:layout_constraintBottom_toBottomOf="@+id/mruTemplate"
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="414dp"
+        android:layout_height="402dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/mruTemplate"
-        app:layout_constraintTop_toTopOf="@+id/mruTemplate"
-        app:srcCompat="@drawable/lot4_green" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="79dp">
 
-    <ImageView
-        android:id="@+id/parkingLot5"
-        android:layout_width="415dp"
-        android:layout_height="544dp"
-        app:layout_constraintBottom_toBottomOf="@+id/mruTemplate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/mruTemplate"
-        app:layout_constraintTop_toTopOf="@+id/mruTemplate"
-        app:srcCompat="@drawable/lot5_green" />
+        <ImageView
+            android:id="@+id/MRU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/campus_parking_map" />
+
+        <ImageView
+            android:id="@+id/eastGateParkade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/eastgateparkade_green" />
+
+        <ImageView
+            android:id="@+id/eastGateParkade_RED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/eastgateparkade_red" />
+
+        <ImageView
+            android:id="@+id/parkingLotA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lota_green" />
+
+        <ImageView
+            android:id="@+id/parkingLotA_RED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lota_red" />
+
+        <ImageView
+            android:id="@+id/parkingLotB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lotb_green" />
+
+        <ImageView
+            android:id="@+id/parkingLotB_RED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lotb_red" />
+
+        <ImageView
+            android:id="@+id/parkingLot1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot1_green" />
+
+        <ImageView
+            android:id="@+id/parkingLot1_RED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot1_red" />
+
+        <ImageView
+            android:id="@+id/parkingLot2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot2_green" />
+
+        <ImageView
+            android:id="@+id/parkingLot2_RED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot2_red" />
+
+        <ImageView
+            android:id="@+id/parkingLot3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot3_green" />
+
+        <ImageView
+            android:id="@+id/parkingLot3_RED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot3_red" />
+
+        <ImageView
+            android:id="@+id/parkingLot4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot4_green" />
+
+        <ImageView
+            android:id="@+id/parkingLot4_RED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot4_red" />
+
+        <ImageView
+            android:id="@+id/parkingLot5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot5_green" />
+
+        <ImageView
+            android:id="@+id/parkingLot5_RED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot5_red" />
+
+        <ImageView
+            android:id="@+id/parkingLot6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot6_green" />
+
+        <ImageView
+            android:id="@+id/parkingLot6_RED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot6_red" />
+
+        <ImageView
+            android:id="@+id/parkingLot6A"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot6a_green" />
+
+        <ImageView
+            android:id="@+id/parkingLot6A_RED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot6a_red" />
+
+        <ImageView
+            android:id="@+id/parkingLot7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot7_green" />
+
+        <ImageView
+            android:id="@+id/parkingLot7_RED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot7_red" />
+
+        <ImageView
+            android:id="@+id/parkingLot8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot8_green" />
+
+        <ImageView
+            android:id="@+id/parkingLot8_RED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot8_red" />
+
+        <ImageView
+            android:id="@+id/parkingLot9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot9_green" />
+
+        <ImageView
+            android:id="@+id/parkingLot9_RED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/lot9_red" />
+
+    </FrameLayout>
 
     <!--    <ImageView-->
-<!--        android:id="@+id/eastParkade"-->
-<!--        android:layout_width="74dp"-->
-<!--        android:layout_height="54dp"-->
+    <!--        android:id="@+id/eastParkade"-->
+    <!--        android:layout_width="74dp"-->
+    <!--        android:layout_height="54dp"-->
 
-<!--        app:layout_constraintBottom_toBottomOf="@+id/mruTemplate"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/mruTemplate"-->
-<!--        app:layout_constraintHorizontal_bias="0.549"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/mruTemplate"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/mruTemplate"-->
-<!--        app:layout_constraintVertical_bias="0.593"-->
-<!--        app:srcCompat="@drawable/eastgateparkade_green" />-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/mruTemplate"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/mruTemplate"-->
+    <!--        app:layout_constraintHorizontal_bias="0.549"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/mruTemplate"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/mruTemplate"-->
+    <!--        app:layout_constraintVertical_bias="0.593"-->
+    <!--        app:srcCompat="@drawable/eastgateparkade_green" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,12 +9,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
-import android.content.res.Resources;
 
 import androidx.core.content.ContextCompat;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -32,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageViewEastGate = findViewById(R.id.eastGateParkade);
         ImageView imageViewLot4 = findViewById(R.id.parkingLot4);
         ImageView imageViewLot5 = findViewById(R.id.parkingLot5);
-        ImageView imageViewLotB = findViewById(R.id.parkingLotB);
+        ImageView imageViewLotB = findViewById(R.id.parkingLot6A);
 
         Drawable drawable = ContextCompat.getDrawable(MainActivity.this, R.drawable.eastgateparkade_green);
         Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
