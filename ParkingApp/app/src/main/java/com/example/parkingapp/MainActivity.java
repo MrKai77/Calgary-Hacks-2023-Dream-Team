@@ -14,11 +14,16 @@ import androidx.core.content.ContextCompat;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Random;
+
 
 public class MainActivity extends AppCompatActivity {
 
-
-
+    public int generateRandomNumber(int upperBound) {
+        Random random = new Random();
+        int randomNumber = random.nextInt(upperBound) + 1;
+        return randomNumber;
+    }
     TextView displayParkingSpot;
 
     @Override
@@ -53,10 +58,35 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageViewLot8Red = findViewById(R.id.parkingLot8_RED);
         ImageView imageViewLot9 = findViewById(R.id.parkingLot9);
         ImageView imageViewLot9Red = findViewById(R.id.parkingLot9_RED);
-
-
+        int eastGateParkingNumber = generateRandomNumber(20);
+        int lotAParkingNumber = generateRandomNumber(20);
+        int lotBParkingNumber = generateRandomNumber(20);
+        int lotParkingLot1 = generateRandomNumber(20);
+        int lotParkingLot2 = generateRandomNumber(20);
+        int lotParkingLot3 = generateRandomNumber(20);
+        int lotParkingLot4 = generateRandomNumber(20);
+        int lotParkingLot5 = generateRandomNumber(20);
+        int lotParkingLot6 = generateRandomNumber(20);
+        int lotParkingLot6A = generateRandomNumber(20);
+        int lotParkingLot7 = generateRandomNumber(20);
+        int lotParkingLot8 = generateRandomNumber(20);
+        int lotParkingLot9 = generateRandomNumber(20);
         Drawable drawable = ContextCompat.getDrawable(MainActivity.this, R.drawable.eastgateparkade_green);
         Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
+
+
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+
+            public void onClick(View view) {
+
+
+                displayParkingSpot.setText("East Gate Parking " + eastGateParkingNumber + "/20" + "\n" + "Lot A Parking " + lotAParkingNumber + "/20" + "\n" + "Lot B Parking " + lotBParkingNumber + "/20" + "\n" + "Lot B Parking " + lotBParkingNumber + "/20" + "\n" + "Lot 1 Parking " + lotParkingLot1 + "/20" + "\n" + "Lot 2 Parking " + lotParkingLot2 + "/20" + "\n" + "Lot 3 Parking " + lotParkingLot3 + "/20" + "\n" + "Lot 4 Parking " + lotParkingLot4 + "/20" + "\n" + "Lot 5 Parking " + lotParkingLot5 + "/20" + "\n" + "Lot 6 Parking " + lotParkingLot6 + "/20" + "\n" + "Lot 7 Parking " + lotParkingLot7 + "/20" + "\n" + "Lot 8 Parking " + lotParkingLot8 + "/20" + "\n" + "Lot 9 Parking " + lotParkingLot9 + "/20" + "\n" );
+
+            }
+        });
+
         imageViewEastGate.setOnTouchListener(new View.OnTouchListener() {
 
             @Override
