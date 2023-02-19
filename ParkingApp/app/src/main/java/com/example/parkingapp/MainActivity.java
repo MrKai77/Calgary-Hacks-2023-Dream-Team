@@ -55,38 +55,17 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageViewLot9 = findViewById(R.id.parkingLot9);
         ImageView imageViewLot9Red = findViewById(R.id.parkingLot9_RED);
 
-        ListView parkingLotList = (ListView)findViewById(R.id.parkingListView);
-        String lotList[] = {
-                "East Gate Parkade",
-                "Lot A",
-                "Lot B",
-                "Lot 1",
-                "Lot 2",
-                "Lot 3",
-                "Lot 4",
-                "Lot 5",
-                "Lot 6",
-                "Lot 6A",
-                "Lot 7",
-                "Lot 8",
-                "Lot 9"
-        };
-
-        final ArrayAdapter adapter = new ArrayAdapter(this,
-                R.layout.list_item, R.id.textView, lotList);
-
-        parkingLotList.setAdapter(adapter);
-
-        parkingLotList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-
-                /* appending Happy with festival name */
-                String value = "" + adapter.getItem(position);
-                /* Display the Toast */
-                Toast.makeText(getApplicationContext(), value, Toast.LENGTH_SHORT).show();
-            }
-        });
+//        parkingLotList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+//
+//                /* appending Happy with festival name */
+//                String value = "" + adapter.getItem(position);
+//                /* Display the Toast */
+//                Toast.makeText(getApplicationContext(), value, Toast.LENGTH_SHORT).show();
+//            }
+//        });
+        setRandomAvailabilities();
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,11 +77,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void setRandomAvailabilities() {
-        int maxGenInt = 10;
+        int maxGenInt = 2;
+        int maxGenIntBig = 3;
 
-        int eastGateParkingNumber = generateRandomNumber(maxGenInt);
-        int parkingLotAOccupancies = generateRandomNumber(maxGenInt);
-        int parkingLotBOccupancies = generateRandomNumber(maxGenInt);
+        int eastGateParkingNumber = generateRandomNumber(maxGenIntBig);
+        int parkingLotAOccupancies = generateRandomNumber(maxGenIntBig);
+        int parkingLotBOccupancies = generateRandomNumber(maxGenIntBig);
         int parkingLot1Occupancies = generateRandomNumber(maxGenInt);
         int parkingLot2Occupancies = generateRandomNumber(maxGenInt);
         int parkingLot3Occupancies = generateRandomNumber(maxGenInt);
@@ -114,9 +94,9 @@ public class MainActivity extends AppCompatActivity {
         int parkingLot8Occupancies = generateRandomNumber(maxGenInt);
         int parkingLot9Occupancies = generateRandomNumber(maxGenInt);
 
-        setVisibilityOfLot(parkingLocations.PARKADE, ((eastGateParkingNumber == maxGenInt) ? false : true));
-        setVisibilityOfLot(parkingLocations.LOT_A, ((parkingLotAOccupancies == maxGenInt) ? false : true));
-        setVisibilityOfLot(parkingLocations.LOT_B, ((parkingLotBOccupancies == maxGenInt) ? false : true));
+        setVisibilityOfLot(parkingLocations.PARKADE, ((eastGateParkingNumber == maxGenIntBig) ? false : true));
+        setVisibilityOfLot(parkingLocations.LOT_A, ((parkingLotAOccupancies == maxGenIntBig) ? false : true));
+        setVisibilityOfLot(parkingLocations.LOT_B, ((parkingLotBOccupancies == maxGenIntBig) ? false : true));
         setVisibilityOfLot(parkingLocations.LOT_1, ((parkingLot1Occupancies == maxGenInt) ? false : true));
         setVisibilityOfLot(parkingLocations.LOT_2, ((parkingLot2Occupancies == maxGenInt) ? false : true));
         setVisibilityOfLot(parkingLocations.LOT_3, ((parkingLot3Occupancies == maxGenInt) ? false : true));
@@ -127,6 +107,28 @@ public class MainActivity extends AppCompatActivity {
         setVisibilityOfLot(parkingLocations.LOT_7, ((parkingLot7Occupancies == maxGenInt) ? false : true));
         setVisibilityOfLot(parkingLocations.LOT_8, ((parkingLot8Occupancies == maxGenInt) ? false : true));
         setVisibilityOfLot(parkingLocations.LOT_9, ((parkingLot9Occupancies == maxGenInt) ? false : true));
+
+        ListView parkingLotList = (ListView)findViewById(R.id.parkingListView);
+        String lotList[] = {
+                "East Gate Parkade (Availability: ".concat(Integer.toString((eastGateParkingNumber == maxGenIntBig) ? 0 : generateRandomNumber(20))).concat(" lots)"),
+                "Lot A (Availability: ".concat(Integer.toString((parkingLotAOccupancies == maxGenIntBig) ? 0 : generateRandomNumber(20))).concat(" lots)"),
+                "Lot B (Availability: ".concat(Integer.toString((parkingLotBOccupancies == maxGenIntBig) ? 0 : generateRandomNumber(20))).concat(" lots)"),
+                "Lot 1 (Availability: ".concat(Integer.toString((parkingLot1Occupancies == maxGenInt) ? 0 : generateRandomNumber(10))).concat(" lots)"),
+                "Lot 2 (Availability: ".concat(Integer.toString((parkingLot2Occupancies == maxGenInt) ? 0 : generateRandomNumber(10))).concat(" lots)"),
+                "Lot 3 (Availability: ".concat(Integer.toString((parkingLot3Occupancies == maxGenInt) ? 0 : generateRandomNumber(10))).concat(" lots)"),
+                "Lot 4 (Availability: ".concat(Integer.toString((parkingLot4Occupancies == maxGenInt) ? 0 : generateRandomNumber(10))).concat(" lots)"),
+                "Lot 5 (Availability: ".concat(Integer.toString((parkingLot5Occupancies == maxGenInt) ? 0 : generateRandomNumber(10))).concat(" lots)"),
+                "Lot 6 (Availability: ".concat(Integer.toString((parkingLot6Occupancies == maxGenInt) ? 0 : generateRandomNumber(10))).concat(" lots)"),
+                "Lot 6A (Availability: ".concat(Integer.toString((parkingLot6AOccupancies == maxGenInt) ? 0 : generateRandomNumber(10))).concat(" lots)"),
+                "Lot 7 (Availability: ".concat(Integer.toString((parkingLot7Occupancies == maxGenInt) ? 0 : generateRandomNumber(10))).concat(" lots)"),
+                "Lot 8 (Availability: ".concat(Integer.toString((parkingLot8Occupancies == maxGenInt) ? 0 : generateRandomNumber(10))).concat(" lots)"),
+                "Lot 9 (Availability: ".concat(Integer.toString((parkingLot9Occupancies == maxGenInt) ? 0 : generateRandomNumber(10))).concat(" lots)")
+        };
+
+        final ArrayAdapter adapter = new ArrayAdapter(this,
+                R.layout.list_item, R.id.textView, lotList);
+
+        parkingLotList.setAdapter(adapter);
     }
 
 

@@ -179,8 +179,9 @@
     </FrameLayout>
 
     <LinearLayout
-        android:layout_width="410dp"
-        android:layout_height="332dp"
+        android:layout_width="353dp"
+        android:layout_height="245dp"
+        android:layout_marginTop="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -190,11 +191,11 @@
         <ListView
             android:id="@+id/parkingListView"
             android:layout_width="match_parent"
-            android:layout_height="197dp" />
+            android:layout_height="152dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="78dp"
             android:orientation="horizontal">
 
             <Space
@@ -204,8 +205,8 @@
 
             <Button
                 android:id="@+id/theRefreshButton"
-                android:layout_width="398dp"
-                android:layout_height="67dp"
+                android:layout_width="255dp"
+                android:layout_height="69dp"
                 android:layout_marginBottom="108dp"
                 android:text="Refresh" />
 
@@ -216,4 +217,5 @@
         </LinearLayout>
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
