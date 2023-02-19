@@ -59,19 +59,6 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageViewLot8Red = findViewById(R.id.parkingLot8_RED);
         ImageView imageViewLot9 = findViewById(R.id.parkingLot9);
         ImageView imageViewLot9Red = findViewById(R.id.parkingLot9_RED);
-        int eastGateParkingNumber = generateRandomNumber(20);
-        int lotAParkingNumber = generateRandomNumber(20);
-        int lotBParkingNumber = generateRandomNumber(20);
-        int lotParkingLot1 = generateRandomNumber(20);
-        int lotParkingLot2 = generateRandomNumber(20);
-        int lotParkingLot3 = generateRandomNumber(20);
-        int lotParkingLot4 = generateRandomNumber(20);
-        int lotParkingLot5 = generateRandomNumber(20);
-        int lotParkingLot6 = generateRandomNumber(20);
-        int lotParkingLot6A = generateRandomNumber(20);
-        int lotParkingLot7 = generateRandomNumber(20);
-        int lotParkingLot8 = generateRandomNumber(20);
-        int lotParkingLot9 = generateRandomNumber(20);
         Drawable drawable = ContextCompat.getDrawable(MainActivity.this, R.drawable.eastgateparkade_green);
         Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
 
@@ -81,21 +68,41 @@ public class MainActivity extends AppCompatActivity {
             @Override
 
             public void onClick(View view) {
-
-
-                displayParkingSpot.setText("East Gate Parking " + eastGateParkingNumber + "/20" + "\n" + "Lot A Parking " + lotAParkingNumber + "/20" + "\n" + "Lot B Parking " + lotBParkingNumber + "/20" + "\n" + "Lot B Parking " + lotBParkingNumber + "/20" + "\n" + "Lot 1 Parking " + lotParkingLot1 + "/20" + "\n" + "Lot 2 Parking " + lotParkingLot2 + "/20" + "\n" + "Lot 3 Parking " + lotParkingLot3 + "/20" + "\n" + "Lot 4 Parking " + lotParkingLot4 + "/20" + "\n" + "Lot 5 Parking " + lotParkingLot5 + "/20" + "\n" + "Lot 6 Parking " + lotParkingLot6 + "/20" + "\n" + "Lot 7 Parking " + lotParkingLot7 + "/20" + "\n" + "Lot 8 Parking " + lotParkingLot8 + "/20" + "\n" + "Lot 9 Parking " + lotParkingLot9 + "/20" + "\n" );
-
+                setRandomAvailabilities();
             }
         });
+    }
 
-        imageViewEastGate.setOnTouchListener(new View.OnTouchListener() {
+    void setRandomAvailabilities() {
+        int maxGenInt = 10;
 
-            @Override
-            public void onClick(View view) {
-                setVisibilityOfLot(parkingLocations.LOT_2, false);
-            }
-        });
+        int eastGateParkingNumber = generateRandomNumber(maxGenInt);
+        int parkingLotAOccupancies = generateRandomNumber(maxGenInt);
+        int parkingLotBOccupancies = generateRandomNumber(maxGenInt);
+        int parkingLot1Occupancies = generateRandomNumber(maxGenInt);
+        int parkingLot2Occupancies = generateRandomNumber(maxGenInt);
+        int parkingLot3Occupancies = generateRandomNumber(maxGenInt);
+        int parkingLot4Occupancies = generateRandomNumber(maxGenInt);
+        int parkingLot5Occupancies = generateRandomNumber(maxGenInt);
+        int parkingLot6Occupancies = generateRandomNumber(maxGenInt);
+        int parkingLot6AOccupancies = generateRandomNumber(maxGenInt);
+        int parkingLot7Occupancies = generateRandomNumber(maxGenInt);
+        int parkingLot8Occupancies = generateRandomNumber(maxGenInt);
+        int parkingLot9Occupancies = generateRandomNumber(maxGenInt);
 
+        setVisibilityOfLot(parkingLocations.PARKADE, ((eastGateParkingNumber == maxGenInt) ? false : true));
+        setVisibilityOfLot(parkingLocations.LOT_A, ((parkingLotAOccupancies == maxGenInt) ? false : true));
+        setVisibilityOfLot(parkingLocations.LOT_B, ((parkingLotBOccupancies == maxGenInt) ? false : true));
+        setVisibilityOfLot(parkingLocations.LOT_1, ((parkingLot1Occupancies == maxGenInt) ? false : true));
+        setVisibilityOfLot(parkingLocations.LOT_2, ((parkingLot2Occupancies == maxGenInt) ? false : true));
+        setVisibilityOfLot(parkingLocations.LOT_3, ((parkingLot3Occupancies == maxGenInt) ? false : true));
+        setVisibilityOfLot(parkingLocations.LOT_4, ((parkingLot4Occupancies == maxGenInt) ? false : true));
+        setVisibilityOfLot(parkingLocations.LOT_5, ((parkingLot5Occupancies == maxGenInt) ? false : true));
+        setVisibilityOfLot(parkingLocations.LOT_6, ((parkingLot6Occupancies == maxGenInt) ? false : true));
+        setVisibilityOfLot(parkingLocations.LOT_6A, ((parkingLot6AOccupancies == maxGenInt) ? false : true));
+        setVisibilityOfLot(parkingLocations.LOT_7, ((parkingLot7Occupancies == maxGenInt) ? false : true));
+        setVisibilityOfLot(parkingLocations.LOT_8, ((parkingLot8Occupancies == maxGenInt) ? false : true));
+        setVisibilityOfLot(parkingLocations.LOT_9, ((parkingLot9Occupancies == maxGenInt) ? false : true));
     }
 
 
@@ -116,43 +123,43 @@ public class MainActivity extends AppCompatActivity {
 
         switch (location) {
             case PARKADE:
-                imageViewEastGateRed.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                imageViewEastGateRed.setVisibility((!visibility ? View.VISIBLE : View.GONE));
                 break;
             case LOT_A:
-                imageViewLotARed.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                imageViewLotARed.setVisibility((!visibility ? View.VISIBLE : View.GONE));
                 break;
             case LOT_B:
-                imageViewLotBRed.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                imageViewLotBRed.setVisibility((!visibility ? View.VISIBLE : View.GONE));
                 break;
             case LOT_1:
-                imageViewLot1Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                imageViewLot1Red.setVisibility((!visibility ? View.VISIBLE : View.GONE));
                 break;
             case LOT_2:
-                imageViewLot2Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                imageViewLot2Red.setVisibility((!visibility ? View.VISIBLE : View.GONE));
                 break;
             case LOT_3:
-                imageViewLot3Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                imageViewLot3Red.setVisibility((!visibility ? View.VISIBLE : View.GONE));
                 break;
             case LOT_4:
-                imageViewLot4Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                imageViewLot4Red.setVisibility((!visibility ? View.VISIBLE : View.GONE));
                 break;
             case LOT_5:
-                imageViewLot5Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                imageViewLot5Red.setVisibility((!visibility ? View.VISIBLE : View.GONE));
                 break;
             case LOT_6:
-                imageViewLot6Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                imageViewLot6Red.setVisibility((!visibility ? View.VISIBLE : View.GONE));
                 break;
             case LOT_6A:
-                imageViewLot6ARed.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                imageViewLot6ARed.setVisibility((!visibility ? View.VISIBLE : View.GONE));
                 break;
             case LOT_7:
-                imageViewLot7Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                imageViewLot7Red.setVisibility((!visibility ? View.VISIBLE : View.GONE));
                 break;
             case LOT_8:
-                imageViewLot8Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                imageViewLot8Red.setVisibility((!visibility ? View.VISIBLE : View.GONE));
                 break;
             case LOT_9:
-                imageViewLot9Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                imageViewLot9Red.setVisibility((!visibility ? View.VISIBLE : View.GONE));
                 break;
         }
     }
