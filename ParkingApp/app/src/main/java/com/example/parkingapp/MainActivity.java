@@ -13,11 +13,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
-
-
 
     TextView displayParkingSpot;
 
@@ -54,71 +53,87 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageViewLot9 = findViewById(R.id.parkingLot9);
         ImageView imageViewLot9Red = findViewById(R.id.parkingLot9_RED);
 
-
-        Drawable drawable = ContextCompat.getDrawable(MainActivity.this, R.drawable.eastgateparkade_green);
-        Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
-        imageViewEastGate.setOnTouchListener(new View.OnTouchListener() {
-
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    int x = (int) event.getX();
-                    int y = (int) event.getY();
-
-                    try {
-                        int pixel = bitmap.getPixel(x, y);
-
-                        int green = Color.green(pixel);
-                        int red = Color.red(pixel);
-                        int blue = Color.blue(pixel);
-
-                        //int pixel = bitmap.getPixel(x, y);
-                        int alpha;
-
-                        if (bitmap.getConfig() == Bitmap.Config.ARGB_8888) {
-                            alpha = Color.alpha(pixel);
-                            alpha = alpha >>> 16;
-
-                        } else {
-                            alpha = 255; // no alpha channel, so assume fully opaque
-                        }
-
-                        imageViewEastGate.setImageDrawable(drawable);
-                        displayParkingSpot.setText(" "+x+" "+y);
-                        return true;
-                    }
-                    catch(Exception e) {
-                        displayParkingSpot.setText("out of range");
-                        return false;
-                    }
-                }
-                return false;
+            public void onClick(View view) {
+                setVisibilityOfLot(parkingLocations.LOT_2, false);
             }
         });
-//        imageView.setOnTouchListener(new View.OnTouchListener() {
-//
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-//                    int x = (int) event.getX();
-//                    int y = (int) (event.getY()/2);
-//
-//
-//                    Drawable drawable = ContextCompat.getDrawable(MainActivity.this, R.drawable.eastgateparkade_green);
-//                    imageView.setImageDrawable(drawable);
-//
-//                    Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
-//                    int pixel = bitmap.getPixel(x, y);
-//                    int opacity = Color.alpha(pixel);
-////                    if (opacity == 0) {
-//                        displayParkingSpot.setText(String.valueOf(y));
-////                    }
-//                    return true;
-//                }
-//                return false;
-//            }
-//        });
 
     }
 
+
+    void setVisibilityOfLot(parkingLocations location, Boolean visibility) {
+        ImageView imageViewEastGateRed = findViewById(R.id.eastGateParkade_RED);
+        ImageView imageViewLotARed = findViewById(R.id.parkingLotA_RED);
+        ImageView imageViewLotBRed = findViewById(R.id.parkingLotB_RED);
+        ImageView imageViewLot1Red = findViewById(R.id.parkingLot1_RED);
+        ImageView imageViewLot2Red = findViewById(R.id.parkingLot2_RED);
+        ImageView imageViewLot3Red = findViewById(R.id.parkingLot3_RED);
+        ImageView imageViewLot4Red = findViewById(R.id.parkingLot4_RED);
+        ImageView imageViewLot5Red = findViewById(R.id.parkingLot5_RED);
+        ImageView imageViewLot6Red = findViewById(R.id.parkingLot6_RED);
+        ImageView imageViewLot6ARed = findViewById(R.id.parkingLot6A_RED);
+        ImageView imageViewLot7Red = findViewById(R.id.parkingLot7_RED);
+        ImageView imageViewLot8Red = findViewById(R.id.parkingLot8_RED);
+        ImageView imageViewLot9Red = findViewById(R.id.parkingLot9_RED);
+
+        switch (location) {
+            case PARKADE:
+                imageViewEastGateRed.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                break;
+            case LOT_A:
+                imageViewLotARed.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                break;
+            case LOT_B:
+                imageViewLotBRed.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                break;
+            case LOT_1:
+                imageViewLot1Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                break;
+            case LOT_2:
+                imageViewLot2Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                break;
+            case LOT_3:
+                imageViewLot3Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                break;
+            case LOT_4:
+                imageViewLot4Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                break;
+            case LOT_5:
+                imageViewLot5Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                break;
+            case LOT_6:
+                imageViewLot6Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                break;
+            case LOT_6A:
+                imageViewLot6ARed.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                break;
+            case LOT_7:
+                imageViewLot7Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                break;
+            case LOT_8:
+                imageViewLot8Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                break;
+            case LOT_9:
+                imageViewLot9Red.setVisibility((visibility ? View.VISIBLE : View.GONE));
+                break;
+        }
+    }
+
+    enum parkingLocations {
+        PARKADE,
+        LOT_A,
+        LOT_B,
+        LOT_1,
+        LOT_2,
+        LOT_3,
+        LOT_4,
+        LOT_5,
+        LOT_6,
+        LOT_6A,
+        LOT_7,
+        LOT_8,
+        LOT_9
+    }
 }
